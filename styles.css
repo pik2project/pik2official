@@ -1,0 +1,668 @@
+@font-face{
+    src:url(fonts/GlacialIndifference-Regular.otf);
+    font-family: Glacial-Reg;
+}
+
+@font-face{
+    src:url(fonts/GlacialIndifference-Bold.otf);
+    font-family: Glacial-Bold;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    color:#caa461;
+    font-family: 'Glacial-Reg', serif;
+    font-weight: 0px;
+}
+
+body{
+    background-color: #3c3c3c;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    font-weight: 600;
+}
+
+p{
+    font-size: 20px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100001 !important; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 850px;
+  }
+
+/* Modal Animation */
+.modal-content{  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top:1%;
+    right: 1%;
+    color: #f1f1f1;
+    font-size: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.close:hover , .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Animation CSS*/
+.reveal{
+    position: relative;
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal-right{
+    transform: translateY(150px);
+}
+
+.reveal.active {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.carousel-indicators .active{
+    background-color:#caa461;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 45px;
+  color:#caa461;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 45px;
+  color:#caa461;
+}
+
+/*Loading Screen*/
+.loader {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.8;
+    background-color:#221e1e;
+    z-index: 100000;
+    text-align: center;
+}
+
+.loader img {
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    z-index: 100001;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*Home CSS*/
+.fadeineffect{
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#myVideo{
+    position: relative;
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#myBtn {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    position: absolute;
+    padding: 10px 50px 10px 50px;
+    font-size: 30px;
+    background: rgba(60,60,60,0.9);
+    border: none;
+    color: #caa461;
+}
+
+.abouthutama{
+    padding-top: 30px   ;
+}
+
+.abouttext{
+    padding-left:60px;
+    padding-right:20px;
+    text-align: justify;
+}
+
+.abouthutama img{
+    border: 4px solid;
+}
+
+.homeproject{
+    padding-left:50px;
+}
+
+.facilityH{
+    position: relative;
+    padding: 0px 100px;
+    background:url(img/house.png);
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+}
+
+.facilityHL{
+    position: relative;
+    padding: 0px 100px;
+    background:url(img/houselots.jpg);
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+}
+.facilityA{
+    position: relative;
+    padding: 0px 100px;
+    background:url(img/apartment.jpg);
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+}
+.facilityCL{
+    position: relative;
+    padding: 0px 110px;
+    background:url(img/commercial.jpg);
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+}
+
+.facilitySoho{
+    position: relative;
+    padding: 0px 100px;
+    background:url(img/soho.jpg);
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+}
+.facilityG{
+    position: relative;
+    padding: 0px 100px;
+    background:url(img/gudang.png);
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+}
+.facilityGI{
+    position: relative;
+    padding: 0px 100px;
+    background:url(img/golfisland.jpg);
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+}
+.facilityE{
+    position: relative;
+    padding: 0px 100px;
+    background:url(img/ebony.jpg);
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+}
+.centered{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 10px 50px 10px 50px;
+    background: rgba(60,60,60,0.9);
+    box-shadow: 0 5px 15px rgba(0, 0,0, 0.5);
+    transition: 1s;
+}
+
+.centered:hover{
+    box-shadow: 0 5px 15px rgba(0, 0,0, 1);
+}
+
+.centered a:hover{
+    font-size: 40px;
+}
+
+.centered a{
+    text-decoration: none;
+    color: #caa461;
+    font-size: 38px;
+}
+
+.wabutton{
+    position: fixed;
+    width:50px;
+    height:50px;
+    bottom:40px;
+    left: 30px;
+}
+
+/*Facility CSS*/
+.headfacility{
+    padding-top: 25px;
+    background-color: white;
+}
+.headfacility h1{
+    color: black;
+}
+.facility{
+    background-color: white;
+    padding: 20px 70px 30px 70px;
+}
+
+.facility h3{
+    padding-top: 15px;
+    color:#3D3C3C;
+}
+
+/*About CSS*/
+.pik2img{
+    position: relative;
+    padding: 0px 100px;
+    background:url(img/background.jpg);
+    background-repeat: no-repeat;
+    height: 90vh;
+    text-align: center;
+}
+
+.pik2img h1{
+    padding-top:25%;
+    font-size: 50px;
+}
+.counter-group{
+    padding: 25px 20px 25px 20px;
+}
+
+.content{
+    font-size: 4vh;
+    border-right: 2px solid #caa461;
+}
+
+.content:last-child{
+    border-right: 0px solid #caa461;
+}
+.content i{
+    font-size: 7vh;
+}
+.content .text{
+    font-size: 4vh;
+}
+
+.adungheader{
+    padding-top: 20px;
+    background-color: white;
+}
+
+.adungcontent{
+    background-color: white;
+    text-align: justify;
+}
+
+.salimheader{
+    background-color: white;
+}
+
+.salimcontent{
+    background-color: white;
+    text-align: justify;
+}
+
+.fixedbg{
+    background-image:url(img/fixedbg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    min-height:230px;
+}
+
+.fixedbgtext{
+    padding-top:90px;
+}
+
+.group div{
+    display: none;
+}
+.group div.current{
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 40px;
+    display: block;
+    border: 3px solid #caa461;
+}
+
+.next, .prev{
+    float: right;  
+    font-size: 2vw;
+    padding-top:10px;
+    width: 90px;
+    height: 35px;
+}
+
+/*Gallery CSS*/
+.galleryheader{
+    background-color: white;
+}
+
+.gallerysection{
+    background-color: white;
+}
+
+.galleryphoto:hover{
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.galleryphoto:hover{
+    z-index: 1;
+    transform: scale(1.05);
+    box-shadow: 0 25px 40px rgba(0, 0,0, 0.6);
+}
+
+.gallerypart{
+    padding-left: 50px;
+    padding-bottom: 20px;
+}
+
+.gallerypart a{
+    text-decoration: none;
+    color: #caa461;
+    font-size: 20px;
+}
+
+.gallerypart a:hover{
+    font-size: 25px;
+}
+
+/*Contact CSS*/
+.contact-container{
+    padding-top: 35px;
+    padding-bottom: 40px;
+}
+
+.formcontact{
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+
+.formcontact button {
+    display: block;
+    margin: auto;
+    padding: 9px 25px 9px 25px;
+}
+.pikmaps{
+    padding-top: 35px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.container-maps{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    
+}
+.container-maps iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.mapcaption{
+    padding: 15px 0px 8px 15px;
+    background-color: antiquewhite;
+}
+
+.mapcaption p{
+    color:#3D3C3C;
+}
+
+#sendbtn{
+    padding: 7px 20px;
+    font-family: Glacial-Bold;
+    background-color: #caa461;
+    font-weight: 700;
+}
+
+#sendbtn:hover{
+    font-size: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0,0, 0.5);
+}
+
+/*Navbar CSS */
+.navbarKu{
+    background-color: #3c3c3c;
+    font-size: 17px;
+    padding-left: 25px;
+}
+
+.navbar a{
+    font-size: 18px;
+}
+
+.navbar li{
+    padding: 8px 17px 8px 10px;
+}
+
+.dropdown-menu a{
+    color: black;
+}
+
+/* Footer CSS */
+footer{
+    padding-top: 20px;
+}
+footer a{
+    text-decoration: none;
+    color:white;
+    pointer-events: none;
+    cursor: default;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color:white;
+}
+
+.leftpart{
+    padding-left: 50px;
+}
+
+.leftpart img{
+    color: white;
+}
+
+.rightpart {
+    padding-left:180px;
+    padding-bottom:20px;
+}
+
+.copyright{
+    font-size: 14px;
+}
+
+.copyright hr{
+    width: 92%;
+    margin: auto;
+}
+
+/*Responsive Things*/
+@media only screen and (max-width: 600px) {
+    .abouttext{
+        padding-left:20px;
+        padding-right:20px;
+    }
+    
+    .pik2img h1{
+        padding-top:175%;
+    }
+    
+    .gallerypart{
+        padding-left: 0px;
+    }
+    
+    .pikmaps{
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    
+    footer{
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+    }
+
+    .leftpart{
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .leftpart hr{
+        margin: auto;
+    }
+    
+    .rightpart {
+        text-align:center;
+        padding-left:0px;
+        padding-bottom:20px;
+    }
+    
+    .rightparthr{
+        margin:auto;    
+    }
+    
+    .rightpart a{
+        padding-left:0px;
+        text-align:center;
+    }
+
+    .next , .prev{
+        font-size: 7vw;
+    }
+    .content{
+        border-right: 0px solid #caa461;
+    }
+    #myBtn {
+        top: 30%;
+        font-size: 20px;
+    }
+    .navbarKu{
+        padding-left: 0px;
+    }
+    
+    .centered a{
+        font-size: 25px;
+    }
+    
+    .formcontact{
+        padding-left: 15px;
+        padding-bottom: 10px;
+    }
+    
+    .loader img {
+        left: 25%;
+        z-index: 100001;
+    }
+    
+    .salimheader{
+        text-align:center;
+    }
+    
+    .adungheader{
+        text-align:center;
+    }
+    
+    .abouthr{
+        margin:auto;   
+    }
+
+}
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
